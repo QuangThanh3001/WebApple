@@ -1,0 +1,108 @@
+<div class="container-fluid p-0  position-fixed top-0 start-0" style="z-index: 10000; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(8px);" >
+    <nav class="navbar navbar-expand-sm  navbar-black" style="background-color: rgba(171, 170, 170, 0.8);">
+        <div class="container "> 
+          <div class="collapse navbar-collapse d-flex justify-content-around " id="collapsibleNavbar">
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link" href="/"><i class="bi bi-apple text-white"></i></a>
+                  </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Store</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Mac</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Ipads</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="/mobile/iphone">iPhone</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="#">Watch</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="#">AirPods</a>
+              </li>  
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Link</a></li>
+                  <li><a class="dropdown-item" href="#">Another link</a></li>
+                  <li><a class="dropdown-item" href="#">A third link</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <!-- Button trigger modal -->
+<button type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <i class="bi bi-search"></i>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-black">
+      <div class="modal-header" style="background-color: rgba(171, 170, 170, 0.8) ;">
+        <h1 class="modal-title fs-5 text-center text-white" id="exampleModalLabel">APPLE SEARCH</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="">
+          <i class="bi bi-search text-white"></i>
+          <input type="text" placeholder="Search apple.com" name="search" value="" class="border-0 w-75 rounded-pill"><br/>
+          <div class="mt-5 ">
+            <p class="text-secondary">Quick Links</p>
+            <ul class="">
+              <a href="#" class="text-decoration-none"><li>Find a Store</li></a>
+                <a href="#" class="text-decoration-none"><li>Apple Vision Pro</li></a>
+                <a href="#" class="text-decoration-none"><li>AirPods</li></a>
+                <a href="#" class="text-decoration-none"><li>AirTag</li></a>
+                <a href="#" class="text-decoration-none"> <li>Apple Trade In</li></a>
+            </ul>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+               <li class="nav-item position-relative">
+                <a class="nav-link " href="#"><i class="bi bi-bag"></i></a>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  9+
+                </span>
+              </li> 
+            </ul>
+          </div>
+        </div>
+        <!------LogIn---->
+        <div class="container " style="width: 195px;">
+            <ul class="navbar-nav">
+              <% if (global.login) { %>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <img class="rounded-circle" src="/img/<%= global.user.image %>" alt="" style="width: 30px;" >
+                  </a>
+                </li>
+                <% if (global.user.role === "Admin") { %>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../admin">Admin</a>
+                  </li>
+                <% } %>
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="#"><%= global.user.name %></a>
+                </li>   -->
+                <li class="nav-item">
+                  <a class="nav-link rounded-pill border border-white text-white" href="/logout">Logout</a>
+                </li> 
+                <% } else { %>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="bi bi-person-circle"></i></i></a>
+                  </li>  
+                  <li class="nav-item">
+                    <a class="nav-link rounded-pill border border-white text-white" href="../accounts/login">Login</a>
+                  </li> 
+               <% } %>
+            </ul>
+        </div>
+      </nav>
+</div>
